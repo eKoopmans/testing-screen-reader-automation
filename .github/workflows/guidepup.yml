@@ -16,9 +16,7 @@ jobs:
           node-version: 16
       - name: Enable VoiceOver Automation
         uses: guidepup/setup-action@0.1.3
-      
-      # Uncomment and add your steps for your Guidepup tests here
-      # - name: Install Dependencies
-      #   run: yarn install --frozen-lockfile
-      # - name: VoiceOver Test
-      #   run: yarn test
+      - name: Install Dependencies
+        run: npm ci
+      - name: VoiceOver Test
+        run: npm run guidepup
