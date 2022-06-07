@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "guidepup": "node guidepup-test.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "web-test-runner --group default"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,10 @@
     "url": "https://github.com/eKoopmans/testing-screen-reader-automation/issues"
   },
   "homepage": "https://github.com/eKoopmans/testing-screen-reader-automation#readme",
-  "dependencies": {},
   "devDependencies": {
-    "@guidepup/guidepup": "^0.13.0"
+    "@guidepup/guidepup": "^0.13.0",
+    "@open-wc/testing": "^3.1.5",
+    "@web/test-runner": "^0.13.30",
+    "@web/test-runner-playwright": "^0.8.9"
   }
 }
