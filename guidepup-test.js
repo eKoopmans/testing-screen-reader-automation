@@ -11,7 +11,7 @@ async function run() {
     // Assert on what your users really see and hear when using screen-readers 👂
     const phrase = await voiceOver.lastSpokenPhrase();
     if (phrase !== 'Expected failure') throw `VoiceOver failure: ${phrase}`;
-  } catch {
+  } finally {
     await voiceOver.stop();
   }
 }
