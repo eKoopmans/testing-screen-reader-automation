@@ -2,7 +2,7 @@
 import { playwrightLauncher } from '@web/test-runner-playwright';
 
 function getPattern(type) {
-	return `+(components|controllers|directives|helpers|mixins|templates)/**/*.${type}.js`;
+	return `src/**/*.${type}.js`;
 }
 
 export default {
