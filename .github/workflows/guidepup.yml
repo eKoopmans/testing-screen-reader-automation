@@ -19,4 +19,4 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: VoiceOver Test
-        run: npm run guidepup
+        run: npm run playwright
