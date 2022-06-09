@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "guidepup": "node guidepup-test.js",
-    "test": "web-test-runner --group default"
+    "test": "web-test-runner --group default",
+    "playwright": "playwright test"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,9 @@
   "homepage": "https://github.com/eKoopmans/testing-screen-reader-automation#readme",
   "devDependencies": {
     "@guidepup/guidepup": "^0.13.0",
+    "@guidepup/playwright": "^0.6.1",
     "@open-wc/testing": "^3.1.5",
+    "@playwright/test": "^1.22.2",
     "@web/test-runner": "^0.13.30",
     "@web/test-runner-playwright": "^0.8.9"
   }
