@@ -1,4 +1,3 @@
-// TODO: Connect Playwright.
 import { playwrightLauncher } from '@web/test-runner-playwright';
 
 function getPattern(type) {
@@ -9,6 +8,15 @@ export default {
 	files: getPattern('test'),
 	nodeResolve: true,
 	groups: [],
+	browsers: [
+		playwrightLauncher({
+			async createPage({ context }) {
+				const page = await context.newPage();
+				await page.emulateMedia({ reducedMotion: 'reduce' });
+				return page;
+			}
+		})
+	],
 	testFramework: {
 		config: {
 			ui: 'bdd',
@@ -18,7 +26,6 @@ export default {
 	testRunnerHtml: testFramework =>
 		`<html lang="en">
 			<body>
-				<script src="./tools/resize-observer-test-error-handler.js"></script>
 				<script type="module" src="${testFramework}"></script>
 			</body>
 		</html>`
