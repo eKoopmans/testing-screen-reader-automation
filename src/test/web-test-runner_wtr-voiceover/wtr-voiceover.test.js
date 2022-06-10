@@ -1,5 +1,4 @@
 import { expect } from '@open-wc/testing';
-// import { expect } from '@esm-bundle/chai';
 import { VoiceOverTest, Commands } from 'web-test-runner-voiceover/browser';
 
 describe('should enable voice over tests with inputs', () => {

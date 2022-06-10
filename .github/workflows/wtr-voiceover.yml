@@ -19,4 +19,4 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: VoiceOver Test
-        run: npm run test2
+        run: npm run web-test-runner_wtr-voiceover

@@ -1,11 +1,7 @@
 import { playwrightLauncher } from '@web/test-runner-playwright';
 
-function getPattern(type) {
-	return `src/**/*.${type}.js`;
-}
-
 export default {
-	files: getPattern('test'),
+	files: ['src/**/web-test-runner_guidepup/*.test.js'],
 	nodeResolve: true,
 	groups: [],
 	browsers: [

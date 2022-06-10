@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "guidepup": "node guidepup-test.js",
-    "test": "web-test-runner --group default",
-    "test2": "web-test-runner --group default --config web-test-runner.voiceover.mjs",
-    "playwright": "playwright test"
+    "node_guidepup": "node src/test/node_guidepup/guidepup.test.js",
+    "playwright_guidepup": "playwright test --config playwright.guidepup.js",
+    "web-test-runner_guidepup_fails": "web-test-runner --config web-test-runner.guidepup.js",
+    "web-test-runner_wtr-voiceover": "web-test-runner --config web-test-runner.wtr-voiceover.mjs"
   },
   "repository": {
     "type": "git",

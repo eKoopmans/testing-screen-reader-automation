@@ -7,8 +7,7 @@ import { voiceOverPlugin } from 'web-test-runner-voiceover';
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   concurrency: 1,
   concurrentBrowsers: 1,
-//   files: ['./src/**/*.spec.ts'],
-  files: ['./src/**/*.wtr-voiceover.js'],
+  files: ['src/**/web-test-runner_wtr-voiceover/*.test.js'],
   testsFinishTimeout: 60000,
   testFramework: {
     config: { timeout: '60000' }
