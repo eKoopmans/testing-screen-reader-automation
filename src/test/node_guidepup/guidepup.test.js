@@ -9,9 +9,10 @@ async function run() {
     await voiceOver.next();
 
     // Assert on what your users really see and hear when using screen-readers 👂
+    const expected = 'Welcome to macOS. VoiceOver is on. Finder desktop Relocated Items Alias';
     const phrase = await voiceOver.lastSpokenPhrase();
     console.log('phrase:', phrase);
-    if (phrase !== 'Expected failure') throw `VoiceOver failure: ${phrase}`;
+    if (phrase !== expected) throw `VoiceOver failure.\nExpected: ${expected}\nActual: ${phrase}`;
   } finally {
     await voiceOver.stop();
   }
