@@ -8,6 +8,7 @@
     "node_guidepup": "node src/test/node_guidepup/guidepup.test.js",
     "playwright_guidepup": "playwright test --config playwright.guidepup.js",
     "web-test-runner_guidepup_fails": "web-test-runner --config web-test-runner.guidepup.js",
+    "web-test-runner_wtr-passthrough": "web-test-runner --config web-test-runner.wtr-passthrough.js",
     "web-test-runner_wtr-voiceover": "web-test-runner --config web-test-runner.wtr-voiceover.mjs"
   },
   "repository": {
