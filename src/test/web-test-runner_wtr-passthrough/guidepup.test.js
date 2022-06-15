@@ -1,6 +1,8 @@
 import { expect } from '@open-wc/testing';
 import { run } from '../../../lib/wtr-passthrough/browser.js';
 
+const customRun = (cmd, ...args) => run(['guidepup', 'voiceOver', cmd], ...args);
+
 describe('should enable voice over tests with inputs', () => {
   let element;
 
@@ -13,21 +15,21 @@ describe('should enable voice over tests with inputs', () => {
     `;
     document.body.appendChild(element);
 
-    await run('start');
+    await customRun('start');
   });
 
   afterEach(async () => {
     element.remove();
-    await run('stop');
+    await customRun('stop');
   });
 
   it('should read inputs', async () => {
-    await run('interact');
+    await customRun('interact');
 
-    await run('next');
-    expect(await run('lastSpokenPhrase')).to.equal('First Name edit text');
+    await customRun('next');
+    expect(await customRun('lastSpokenPhrase')).to.equal('First Name edit text');
 
-    await run('next');
-    expect(await run('lastSpokenPhrase')).to.equal('last name edit text');
+    await customRun('next');
+    expect(await customRun('lastSpokenPhrase')).to.equal('last name edit text');
   });
 });

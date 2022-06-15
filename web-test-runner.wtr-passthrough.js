@@ -1,6 +1,6 @@
 import { playwrightLauncher } from '@web/test-runner-playwright';
 import { passthroughPlugin } from './lib/wtr-passthrough/index.js';
-import { voiceOver } from '@guidepup/guidepup';
+import * as guidepup from '@guidepup/guidepup';
 
 export default ({
   concurrency: 1,
@@ -14,6 +14,6 @@ export default ({
   nodeResolve: true,
   dedupe: true,
   plugins: [
-    passthroughPlugin(voiceOver),
+    passthroughPlugin({ guidepup }),
   ]
 });
