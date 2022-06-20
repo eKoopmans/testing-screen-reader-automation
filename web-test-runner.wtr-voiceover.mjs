@@ -8,9 +8,9 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   concurrency: 1,
   concurrentBrowsers: 1,
   files: ['src/**/web-test-runner_wtr-voiceover/*.test.js'],
-  testsFinishTimeout: 60000,
+  testsFinishTimeout: 5000,
   testFramework: {
-    config: { timeout: '60000' }
+    config: { timeout: '5000' }
   },
   browsers: [playwrightLauncher({ product: 'webkit', launchOptions: { headless: false } })],
   nodeResolve: true,
