@@ -10,10 +10,11 @@ describe('should enable voice over tests with inputs', () => {
     element = document.createElement('div');
     element.innerHTML = `
       <h1>start of testing</h1>
-      <h1>foo</h1>
+      <h1>first heading</h1>
       <input aria-label="first name" placeholder="first name" />
-      <h1>bar</h1>
+      <h1>second heading</h1>
       <input aria-label="last name" placeholder="last name" />
+      <h1>end of testing</h1>
     `;
     document.body.appendChild(element);
 
@@ -27,27 +28,19 @@ describe('should enable voice over tests with inputs', () => {
 
   it('should read inputs', async () => {
     await customRun('rotor', { menu: "Window Spots", find: "content" });
-    await run(['foo']);
-    // await customRun('interact');
+    await customRun(['startInteracting']);
 
-    await customRun('advance', {
-      target: {
-        text: 'last name edit text',
-        role: 'input'
-      },
-      steps: 10
+    const output = await customRun('seek', {
+      text: 'end of testing',
+      tries: 20
     });
-    // await customRun('next');
-    // expect(await customRun('tail')).to.equal('First Name edit text');
 
-    // await customRun('advance', {
-    //   target: {
-    //     text: 'last name',
-    //     role: 'input'
-    //   },
-    //   steps: 5
-    // });
-    // // await customRun('next');
-    // expect(await customRun('tail')).to.equal('last name edit text');
+    expect(output).to.eql([
+      'heading level 1 first heading',
+      '',
+      'heading level 1 second heading',
+      'last name edit text',
+      'heading level 1 end of testing'
+    ]);
   });
 });
